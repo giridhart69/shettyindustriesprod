@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>shettyindustries </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://i.postimg.cc/qMb3Mg4M/favicon.png" rel="icon">
+  <link href="https://i.postimg.cc/T2cbFCsb/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <!-- Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-G93XP1XWX5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G93XP1XWX5');
+</script> -->
+<style>
+  body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+  }
+  .section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+  }
+  #hero {
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+  }
+  #services {
+      background: linear-gradient(45deg, #2ecc71, #3498db);
+  }
+  #about {
+      background: linear-gradient(45deg, #34495e, #2c3e50);
+  }
+  #contact {
+      background: linear-gradient(45deg, #e74c3c, #f39c12);
+  }
+  h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+  }
+  h2 {
+      font-size: 3em;
+      margin-bottom: 30px;
+  }
+  h3 {
+      font-size: 2em;
+      margin-top: 30px;
+  }
+  p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 20px auto;
+  }
+  .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: white;
+      color: #3498db;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+  }
+  .btn:hover {
+      transform: scale(1.1);
+  }
+  #cursor {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+      position: fixed;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 9999;
+  }
+  .service-item, .about-item {
+      opacity: 1; /* Changed from 0 to 1 */
+      transform: translateY(0); /* Changed from translateY(20px) to 0 */
+      margin-bottom: 40px;
+      background-color: rgba(255, 255, 255, 0.1); /* Added for better visibility */
+      padding: 20px;
+      border-radius: 10px;
+  }
+  .service-item ul {
+      text-align: left;
+      margin-left: 20px;
+  }
+  .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 50px;
+  }
+  .stat-item {
+      margin: 20px;
+  }
+  .stat-number {
+      font-size: 3em;
+      font-weight: bold;
+  }
+  .clients {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+  }
+  .client-logo {
+      width: 100px;
+      height: 100px;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+  }
+</style>
+</head>
+
+<body>
+  <div id="overlay"></div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <!-- <h1 class="logo me-auto"> <a href="index.html">shettyindustries</a></h1>-->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="../index.html" class="logo me-auto"><img src="https://i.postimg.cc/ZKzxfqc2/fk-Shettynew-removebg-preview.png" alt="" class="img-fluid" text-align:center; width="200" height="150"></a>
+
+      <nav id="navbar" class="navbar">
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+       <h1 >Better Solutions For Your Business</h1>
+          <h2 style="color:black">Transforming talent into tech leaders, bridging academia and industry.</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="../index.html" class="btn-get-started scrollto">Get Started</a>
+            <a href="https://i.imgur.com/dP1QXnd.mp4" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://i.postimg.cc/wvptbmcF/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+  <section id="services" class="section">
+    <div>
+        <h2>Our Comprehensive IT Services</h2>
+        <p>At shettyindustries, we offer a wide range of cutting-edge IT services designed to meet the diverse needs of modern businesses. Our team of experts is committed to delivering innovative solutions that drive growth, enhance efficiency, and ensure security.</p>
+        
+        <div class="service-item">
+            <h3>Cloud Solutions</h3>
+            <p>Embrace the power of cloud computing with shettyindustries. Our cloud solutions are tailored to enhance your business agility, scalability, and cost-efficiency.</p>
+            <p>We offer:</p>
+            <ul>
+                <li>Public, private, and hybrid cloud deployment</li>
+                <li>Cloud migration and optimization</li>
+                <li>24/7 cloud management and support</li>
+            </ul>
+            <p>Whether you're looking to move your existing infrastructure to the cloud or build cloud-native applications, our team of certified cloud experts will guide you every step of the way.</p>
+        </div>
+        
+        <div class="service-item">
+            <h3>Cybersecurity</h3>
+            <p>In today's digital landscape, robust cybersecurity is not just an option—it's a necessity. Protect your valuable data and systems with our comprehensive security solutions.</p>
+            <p>Our cybersecurity services include:</p>
+            <ul>
+                <li>Advanced threat detection and response</li>
+                <li>Vulnerability assessments and penetration testing</li>
+                <li>Compliance management (GDPR, HIPAA, PCI DSS)</li>
+            </ul>
+            <p>Our security experts employ cutting-edge technologies and methodologies to keep your business safe from evolving cyber threats.</p>
+        </div>
+        
+        <!-- Other service items remain unchanged -->
+        
+        <a href="mailto:shettyindustriestechcare@gmail.com" class="btn">Get a Free Consultation</a>
+    </div>
+</section>
+  <!-- Refund Policy Card -->
+  <div id="refund-policy-card" style="display: none;">
+    <div class="card-content">
+      <span class="close-button" onclick="hideRefundPolicy()">&times;</span>
+      <h2>shettyindustries Refund Policy</h2>
+      <p><strong>No Refunds After Sale</strong><br>All sales are final. We encourage you to review course details before purchasing.</p>
+      <p><strong>Automatic Refund for Transaction Issues</strong> <br>If you experience:
+        <ul>
+          <li>Failed payments</li>
+          <li>Duplicate charges</li>
+          <li>Course access issues</li>
+        </ul>
+        We'll automatically refund the amount to your original payment method within 3-5 business days.
+      </p>
+    </div>
+  </div>
+<!-- Refund Policy Card ends section -->
+
+  <!-- Terms and Conditions Card -->
+  <div id="terms-conditions-card" style="display: none;">
+    <div class="card-content">
+      <span class="close-button" onclick="hideTermsConditions()">&times;</span>
+      <h2>shettyindustries Terms and Conditions</h2>
+      <h3>Course Enrollment and Access</h3>
+      <p>By enrolling in a course, you agree to pay the course fee and acknowledge that you have read and understood the course description, outline, and policies.</p>
+      <p>Course access is granted for a specific period, and you agree to complete the course within that timeframe.</p>
+      <h3>Intellectual Property</h3>
+      <p>All course materials, including videos, text, images, and software, are owned by shettyindustries and protected by copyright.</p>
+      <p>You agree not to reproduce, distribute, or modify course materials without prior written consent.</p>
+      <h3>Payment and Refunds</h3>
+      <p>Course fees are non-refundable, except in cases where shettyindustries cancels the course.</p>
+      <p>Payment plans and financing options may be available, but you agree to make timely payments and understand that late payments may incur additional fees.</p>
+      <h3>User Conduct</h3>
+      <p>You agree to use the course materials and platform for personal, non-commercial use only.</p>
+      <p>You agree not to share your login credentials or course access with others.</p>
+      <h3>Warranty Disclaimer</h3>
+      <p>shettyindustries makes no warranties, express or implied, about the course materials or platform.</p>
+      <p>You acknowledge that courses may not be error-free or suitable for your specific needs.</p>
+      <h3>Limitation of Liability</h3>
+      <p>shettyindustries shall not be liable for any damages or losses arising from your use of the course materials or platform.</p>
+      <h3>Governing Law and Jurisdiction</h3>
+      <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India.</p>
+      <p>Any disputes arising from these Terms and Conditions shall be resolved via contact email shettyindustriestechcare@gmail.com.</p>
+      <h3>Changes to Terms and Conditions</h3>
+      <p>shettyindustries reserves the right to modify or update these Terms and Conditions at any time.</p>
+      <p>You agree to review these Terms and Conditions regularly and acknowledge that continued use of the course materials or platform constitutes acceptance of any changes.</p>
+    </div>
+  </div>
+  <!-- Terms and Conditions Card End-->
+  <!-- Privacy Policy Card -->
+  <div id="privacy-policy-card" style="display: none;">
+    <div class="card-content">
+      <span class="close-button" onclick="hidePrivacyPolicy()">&times;</span>
+      <h2>shettyindustries Privacy Policy</h2>
+      <h3>Introduction</h3>
+      <p>shettyindustries is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
+      <h3>Information Collection</h3>
+      <p>We collect personal information when you create an account, enroll in a course, or contact us.</p>
+      <p>This information may include your name, email address, phone number, and payment information.</p>
+      <h3>Use of Information</h3>
+      <p>We use your information to provide and improve our services, communicate with you, and process payments.</p>
+      <h3>Data Security</h3>
+      <p>We take reasonable measures to protect your information from unauthorized access, disclosure, or use.</p>
+      <h3>Data Sharing</h3>
+      <p>We do not share your information with third parties, except as necessary to provide our services or comply with legal requirements.</p>
+      <h3>Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal information.</p>
+      <h3>Changes to Privacy Policy</h3>
+      <p>We may update this Privacy Policy at any time.</p>
+    </div>
+  </div>
+  <!-- Privacy Policy Card End-->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>shettyindustries</h3>
+            <p>
+              2nd floor,Haware Fantasia,Sector 30A<br>
+              Vashi,Navi Mumbai,Mumbai,India<br>
+              <strong>Phone:</strong>+91 9108400249<br>
+              <strong>Email:</strong> shettyindustriestechcare@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:void(0)" onclick="showRefundPolicy()">Refund Policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:void(0)" onclick="showTermsConditions()">Terms & Conditions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:void(0)" onclick="showPrivacyPolicy()">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="IT.html">IT Projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="technical eduaction.html">Technical Education</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Satffing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Freelance Contract Escrow</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Programming classes</a></li> -->
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+
+            <div class="social-links mt-3">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>shettyindustries</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+   
+        Designed by <a>Mark</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    let prices = [50, 100, 80, 120];
+    let total = 0;
+    function showRefundPolicy() 
+    {
+      document.getElementById('refund-policy-card').style.display = 'flex';
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function hideRefundPolicy()
+    {
+      document.getElementById('refund-policy-card').style.display = 'none';
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    function showTermsConditions()
+    {
+      document.getElementById('terms-conditions-card').style.display = 'flex';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function hideTermsConditions()
+    {
+      document.getElementById('terms-conditions-card').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function hidePrivacyPolicy()
+    {
+      document.getElementById('privacy-policy-card').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function showPrivacyPolicy()
+    {
+      document.getElementById('privacy-policy-card').style.display = 'flex';
+      document.getElementById('overlay').style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>

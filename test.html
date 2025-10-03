@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+        .container {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        @media (min-width: 640px) {
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .course-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .course-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+        }
+        .course-card h2 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .detailed-view {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.5s ease-in-out forwards;
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (min-width: 640px) {
+            .detailed-view {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+        }
+        .back-btn, .buy-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 0.5s ease-in-out 0.3s forwards;
+        }
+        .buy-btn {
+            transform: translateX(50px);
+            animation: slideInRight 0.5s ease-in-out 0.3s forwards;
+        }
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .back-btn {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+        .back-btn:hover {
+            background-color: #d1d5db;
+        }
+        .buy-btn {
+            background-color: #eab308;
+            color: white;
+        }
+        .buy-btn:hover {
+            background-color: #ca8a04;
+        }
+        .detailed-card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 0.5s ease-in-out 0.2s forwards;
+        }
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .detailed-card h2 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .detailed-card p {
+            color: white;
+        }
+        .blue { background-color: #3b82f6; }
+        .green { background-color: #22c55e; }
+        .purple { background-color: #8b5cf6; }
+        .red { background-color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Our Courses</h1>
+        <div id="courseContainer"></div>
+    </div>
+
+    <script>
+        const courses = [
+            {
+                id: 1,
+                title: 'Computer Science',
+                description: 'Dive into the world of algorithms, data structures, and software engineering. Our Computer Science courses cover a wide range of topics from basic programming to advanced AI and machine learning.',
+                color: 'blue',
+            },
+            {
+                id: 2,
+                title: 'Working Professionals',
+                description: 'Designed for busy professionals looking to upskill or change careers. These flexible courses cover in-demand skills like project management, data analysis, and leadership.',
+                color: 'green',
+            },
+            {
+                id: 3,
+                title: 'Digital Arts & Design',
+                description: 'Unleash your creativity with our Digital Arts & Design courses. Learn graphic design, UI/UX, 3D modeling, and animation using industry-standard tools and techniques.',
+                color: 'purple',
+            },
+            {
+                id: 4,
+                title: 'Digital Communication Engineering',
+                description: 'Explore the cutting-edge of digital communication. Our courses cover topics like signal processing, network protocols, and wireless systems, preparing you for a career in telecommunications.',
+                color: 'red',
+            }
+        ];
+
+        const courseContainer = document.getElementById('courseContainer');
+        let selectedCourse = null;
+
+        function renderCourses() {
+            courseContainer.innerHTML = '';
+            
+            if (!selectedCourse) {
+                const grid = document.createElement('div');
+                grid.className = 'course-grid';
+                
+                courses.forEach(course => {
+                    const card = document.createElement('div');
+                    card.className = `course-card ${course.color}`;
+                    card.innerHTML = `<h2>${course.title}</h2>`;
+                    card.onclick = () => {
+                        selectedCourse = course;
+                        renderCourses();
+                    };
+                    grid.appendChild(card);
+                });
+                
+                courseContainer.appendChild(grid);
+            } else {
+                const detailedView = document.createElement('div');
+                detailedView.className = 'detailed-view';
+                
+                const backBtn = document.createElement('button');
+                backBtn.className = 'back-btn';
+                backBtn.textContent = 'Back';
+                backBtn.onclick = () => {
+                    selectedCourse = null;
+                    renderCourses();
+                };
+                
+                const detailedCard = document.createElement('div');
+                detailedCard.className = `detailed-card ${selectedCourse.color} sm:w-1/2`;
+                detailedCard.innerHTML = `
+                    <h2>${selectedCourse.title}</h2>
+                    <p>${selectedCourse.description}</p>
+                `;
+                
+                const buyBtn = document.createElement('button');
+                buyBtn.className = 'buy-btn';
+                buyBtn.textContent = 'Buy Now';
+                
+                detailedView.appendChild(backBtn);
+                detailedView.appendChild(detailedCard);
+                detailedView.appendChild(buyBtn);
+                
+                courseContainer.appendChild(detailedView);
+            }
+        }
+
+        // Initial render
+        renderCourses();
+    </script>
+</body>
+</html>
