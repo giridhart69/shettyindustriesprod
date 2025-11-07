@@ -615,7 +615,7 @@
             const totalPrice = coursePrice * selectedSubjects.length;
 
             if (selectedSubjects.length > 0) {
-                buyNowBtn.textContent = `Buy Now - Total: £${totalPrice} (${selectedSubjects.length} Subject${selectedSubjects.length > 1 ? 's' : ''})`;
+                buyNowBtn.textContent = `Buy Now - Total: ₹${totalPrice} (${selectedSubjects.length} Subject${selectedSubjects.length > 1 ? 's' : ''})`;
                 buyNowBtn.classList.add('active');
                 updated_price_final = await convertGBPToINR(totalPrice);
                 let final_product_info=selectedCourse+"---"+Array.from(selectedSubjects).map(input => input.value).join(',');
